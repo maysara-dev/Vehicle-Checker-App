@@ -1,0 +1,205 @@
+/* Header */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@keyframes gradientAnimation {
+0% {
+    background-position: 0 0;
+}
+
+50% {
+    background-position: -100% 0;
+}
+100% {
+    background-position: -200% 0;
+}
+}
+.thasadith-regular {
+    font-family: "Thasadith", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .thasadith-regular-italic {
+    font-family: "Thasadith", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+/* General Styles */
+body {
+    font-family: 'Thasadith', serif;
+    color: #fff;
+    margin: 0;
+
+    padding: 0;
+    background: linear-gradient(90deg, rgb(195, 0, 255) 0%, rgb(0, 208, 255) 25%, rgb(0, 81, 255) 50%, rgba(0, 208, 255, 1) 75%, rgb(195, 0, 255) 100%);
+}
+
+header {
+    font-family: 'Thasadith', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+    line-height: 1.5em;
+    letter-spacing: 1em;
+    text-transform: none;
+    text-align: center;
+    border-bottom-style: hidden;
+    margin: 0;
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(132,0,255,1) 0%, rgb(0, 187, 255) 50%, rgba(132,0,255,1) 100%);
+    color: #fff;
+    background-size: 200% 100%;
+    animation: gradientAnimation 1s linear infinite;
+}
+
+header h1 {
+    margin: 0;
+}
+nav {
+    background: linear-gradient(90deg, rgba(132,0,255,1) 0%, rgb(0, 187, 255) 50%, rgba(132,0,255,1) 100%);
+    padding: 1rem;
+    height: 22px;
+    margin: 0;
+    width: 98.8%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Thasadith', serif;
+    font-size: 1.1em;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(238, 0, 255, 0.966);
+}
+.container {
+    text-align: center;
+    font-family:'Thasadith', serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100%;
+  }
+.search-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
+    height: 400px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Thasadith', serif;
+    font-weight: 400;
+    font-size: 120%;
+    font-style: normal;
+}
+.search-box input[type="text"] {
+    align-items: center;
+    width: 70%;
+    padding: 10px;
+    margin: 80px auto;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    font-family: 'Thasadith', serif;
+}
+::placeholder {
+    color: #fff;
+}
+.search-box button {
+    width: 63%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Thasadith', serif;
+}
+.search-box button:hover {
+    background-color: #00eeff;
+}
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
+    height: 400px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Thasadith', serif;
+    font-weight: 400;
+    font-size: 120%;
+    font-style: normal;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    align-items: center;
+    width: 70%;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    font-family: 'Thasadith', serif;
+}
+::placeholder {
+    color: #fff;
+}
+.login-box input[type="button"],
+.login-box input[type="submit"] {
+    width: 63%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Thasadith', serif;
+}
+
+.login-box input[type="button"]:hover,
+.login-box input[type="submit"]:hover {
+    background-color: #00eeff;
+}
+.results-table {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
+    height: 95px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Thasadith', serif;
+    font-weight: 400;
+    font-size: 100%;
+    font-style: normal;
+}

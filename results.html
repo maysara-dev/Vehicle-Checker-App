@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header> AutoPilot </header>
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        const params = new URLSearchParams(window.location.search);
+        const numberPlate = params.get("numberplate");
+    
+        if (!numberPlate) {
+            document.getElementById("vehicleInfo").innerHTML = "<p>No number plate provided.</p>";
+            return;
+        }
+    
+        try {
+            const response = await fetch(`http://localhost:8080/api/vehicles/search?numberplate=${numberPlate}`);
+            const data = await response.json();
+    
+            if (response.ok) {
+                document.getElementById("reg").textContent = numberPlate;
+                document.getElementById("Make").textContent = data.Make || "N/A";
+                document.getElementById("Model").textContent = data.Model || "N/A";
+                document.getElementById("Colour").textContent = data.Colour || "N/A";
+                document.getElementById("Year").textContent = data.Year || "N/A";
+                document.getElementById("EngineDisplacement").textContent = data.EngineDisplacement || "N/A";
+                document.getElementById("FuelType").textContent = data.FuelType || "N/A";
+                document.getElementById("GearboxType").textContent = data.GearboxType || "N/A";
+                document.getElementById("SprintTime").textContent = data.SprintTime || "N/A";
+            } else {
+                document.getElementById("vehicleInfo").innerHTML = `<p>${data.message || "No results found."}</p>`;
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            document.getElementById("vehicleInfo").innerHTML = "<p>Error fetching data.</p>";
+        }
+    });
+    </script>
+        
+<body class="login">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="search.html">Search</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div 
+        class="results">
+            <h2>Vehicle Details</h2>
+            <div id="vehicleInfo">
+                <p>Registration: <span id="reg"></span></p>
+                <p>Make: <span id="Make"></span></p>
+                <p>Model: <span id="Model"></span></p>
+                <p>Colour: <span id="Colour"></span></p>
+                <p>Year: <span id="Year"></span></p>
+                <p>Engine Size: <span id="EngineDisplacement"></span></p>
+                <p>Fuel: <span id="FuelType"></span></p>
+                <p>Gearbox: <span id="GearboxType"></span></p>
+                <p>Sprint Time: <span id="SprintTime"></span></p>
+            </div>
+        </div>
